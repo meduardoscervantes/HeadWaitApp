@@ -24,7 +24,7 @@ public class ServersFragment extends Fragment {
     public ServersFragment() {
         // Required empty public constructor
     }
-    public static ServersFragment newInstance(String param1, String param2) {
+    public static ServersFragment newInstance() {
         ServersFragment fragment = new ServersFragment();
         return fragment;
     }
