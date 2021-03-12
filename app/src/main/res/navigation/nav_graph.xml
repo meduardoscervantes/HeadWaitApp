@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/inputFragment">
+
+    <fragment
+        android:id="@+id/inputFragment"
+        android:name="com.example.headwaitapp.fragments.InputFragment"
+        android:label="InputFragment"
+        tools:layout="@layout/fragment_input">
+        <action
+            android:id="@+id/action_inputFragment_to_serversFragment"
+            app:destination="@id/serversFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <argument
+            android:name="HeadWait"
+            app:argType="com.example.headwaitapp.appclasses.Headwait"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/serversFragment"
+        android:name="com.example.headwaitapp.fragments.ServersFragment"
+        android:label="fragment_servers"
+        tools:layout="@layout/fragment_servers" >
+        <action
+            android:id="@+id/action_serversFragment_to_serversCashedOutFragment"
+            app:destination="@id/serversCashedOutFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_serversFragment_to_tipRetrievalFragment"
+            app:destination="@id/tipRetrievalFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_serversFragment_to_remitFragment"
+            app:destination="@id/remitFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_serversFragment_to_tipPoolFragment"
+            app:destination="@id/tipPoolFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <action
+            android:id="@+id/action_serversFragment_to_inputFragment"
+            app:destination="@id/inputFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <argument
+            android:name="HeadWait"
+            app:argType="com.example.headwaitapp.appclasses.Headwait" />
+    </fragment>
+    <fragment
+        android:id="@+id/serversCashedOutFragment"
+        android:name="com.example.headwaitapp.fragments.ServersCashedOutFragment"
+        android:label="fragment_servers_cashed_out"
+        tools:layout="@layout/fragment_servers_cashed_out" >
+        <action
+            android:id="@+id/action_serversCashedOutFragment_to_serversFragment"
+            app:destination="@id/serversFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <argument
+            android:name="HeadWait"
+            app:argType="com.example.headwaitapp.appclasses.Headwait" />
+    </fragment>
+    <fragment
+        android:id="@+id/tipRetrievalFragment"
+        android:name="com.example.headwaitapp.fragments.TipRetrievalFragment"
+        android:label="fragment_tip_retrieval"
+        tools:layout="@layout/fragment_tip_retrieval" >
+        <action
+            android:id="@+id/action_tipRetrievalFragment_to_serversFragment"
+            app:destination="@id/serversFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <argument
+            android:name="HeadWait"
+            app:argType="com.example.headwaitapp.appclasses.Headwait" />
+    </fragment>
+    <fragment
+        android:id="@+id/remitFragment"
+        android:name="com.example.headwaitapp.fragments.RemitFragment"
+        android:label="fragment_remit"
+        tools:layout="@layout/fragment_remit" >
+        <action
+            android:id="@+id/action_remitFragment_to_serversFragment"
+            app:destination="@id/serversFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <argument
+            android:name="HeadWait"
+            app:argType="com.example.headwaitapp.appclasses.Headwait" />
+    </fragment>
+    <fragment
+        android:id="@+id/tipPoolFragment"
+        android:name="com.example.headwaitapp.fragments.TipPoolFragment"
+        android:label="fragment_tip_pool"
+        tools:layout="@layout/fragment_tip_pool" >
+        <action
+            android:id="@+id/action_tipPoolFragment_to_serversFragment"
+            app:destination="@id/serversFragment"
+            app:enterAnim="@android:anim/fade_in" />
+        <argument
+            android:name="HeadWait"
+            app:argType="com.example.headwaitapp.appclasses.Headwait" />
+    </fragment>
+</navigation>

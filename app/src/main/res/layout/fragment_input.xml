@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLinLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="8dp"
+    tools:context="fragments.InputFragment">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Server Name"
+        android:textSize="36sp" />
+    <EditText
+        android:id="@+id/server_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:hint="server name" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Remit"
+        android:textSize="36sp" />
+    <EditText
+        android:id="@+id/remit_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:hint="remit"
+        android:inputType="numberSigned|numberDecimal" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Tip Pool"
+        android:textSize="36sp" />
+    <EditText
+        android:id="@+id/tipPool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:hint="tip pool"
+        android:inputType="number|numberDecimal" />
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <RadioButton
+            android:id="@+id/toBarRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Going to Bar" />
+        <RadioButton
+            android:id="@+id/paidOutRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paid Out" />
+        <RadioButton
+            android:id="@+id/submittingCashRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submitting Cash"
+            android:checked="true"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/addButt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Add Server" />
+    <TextView
+        android:id="@+id/serverAddedTV"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/totalCash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/totalTipRetrieval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+    <TextView
+        android:id="@+id/totalTipPool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+    <Button
+        android:id="@+id/HW_info_butt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HW Info"
+        android:layout_gravity="center_horizontal"/>
+</LinearLayout>

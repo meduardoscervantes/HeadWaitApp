@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/serversLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".fragments.ServersFragment">
+
+    <TextView
+        android:id="@+id/ServersCashedTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Servers Cashed"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/TipRetrievalTV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TipRetrievalTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip Retrieval Log"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/RemitTV"
+        app:layout_constraintEnd_toEndOf="@+id/ServersCashedTV"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/ServersCashedTV"
+        app:layout_constraintTop_toBottomOf="@+id/ServersCashedTV" />
+
+    <TextView
+        android:id="@+id/RemitTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remit"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/TipPoolTV"
+        app:layout_constraintEnd_toEndOf="@+id/TipRetrievalTV"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/TipRetrievalTV"
+        app:layout_constraintTop_toBottomOf="@+id/TipRetrievalTV" />
+
+    <TextView
+        android:id="@+id/TipPoolTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip Pool"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toTopOf="@+id/toHW_info"
+        app:layout_constraintEnd_toEndOf="@+id/RemitTV"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/RemitTV"
+        app:layout_constraintTop_toBottomOf="@+id/RemitTV" />
+
+    <Button
+        android:id="@+id/toHW_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go on back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/TipPoolTV"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/TipPoolTV"
+        app:layout_constraintTop_toBottomOf="@+id/TipPoolTV" />
+</androidx.constraintlayout.widget.ConstraintLayout>
