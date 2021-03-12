@@ -18,7 +18,7 @@ public class Headwait implements Parcelable {
         servers = new ArrayList<>();
         tipRetrievalServers = new ArrayList<>();
         cash = 0.0;
-        df .setRoundingMode(RoundingMode.DOWN);
+        df.setRoundingMode(RoundingMode.DOWN);
     }
 
     /*************/
@@ -31,22 +31,17 @@ public class Headwait implements Parcelable {
     public Double getTotalTipRetrieval(){
         Double total = 0.0;
         for(Server x : tipRetrievalServers) total += x.getRemit();
-        return total;
+        return Double.valueOf(df.format(total));
     }
     public Double getTotalTipPool(){
         Double total = 0.0;
         for(Server x : servers) total += x.getTipPool();
         return Double.valueOf(df.format(total));
     }
-
     public Double getTotalRemit(){
         Double total = 0.0;
         for(Server x : servers) total += x.getRemit();
         return Double.valueOf(df.format(total));
-    }
-
-    public ArrayList<Server> getTipRetrievalServers() {
-        return tipRetrievalServers;
     }
 
     public ArrayList<Server> getServers() {
@@ -61,9 +56,6 @@ public class Headwait implements Parcelable {
     }
     public void addCash(Double cash){
         this.cash += cash;
-    }
-    public void subtractCash(Double cash){
-        this.cash -= cash;
     }
     public void addServer(Server x){
         servers.add(x);

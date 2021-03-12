@@ -7,18 +7,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.headwaitapp.R;
+import com.example.headwaitapp.adapters.RemitAdapter;
 import com.example.headwaitapp.appclasses.Headwait;
 
 public class RemitFragment extends Fragment {
-    private RemitFragmentArgs args;
     private Headwait manuel;
     private NavController navController;
+    private RecyclerView recyclerView;
+    private RemitAdapter remitAdapter;
 
     public RemitFragment() {
         // Required empty public constructor
@@ -27,18 +31,20 @@ public class RemitFragment extends Fragment {
         RemitFragment fragment = new RemitFragment();
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        args = RemitFragmentArgs.fromBundle(getArguments());
-        manuel = args.getHeadWait();
+        manuel = RemitFragmentArgs.fromBundle(getArguments()).getHeadWait();
         navController = Navigation.findNavController(view);
+
+        recyclerView = view.findViewById(R.id.remit_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        remitAdapter = new RemitAdapter(manuel.getServers());
+        recyclerView.setAdapter(remitAdapter);
 
         view.findViewById(R.id.FR_return).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,7 +55,7 @@ public class RemitFragment extends Fragment {
             }
         });
     }
-
+    
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
