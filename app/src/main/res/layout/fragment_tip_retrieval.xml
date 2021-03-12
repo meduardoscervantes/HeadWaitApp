@@ -11,15 +11,27 @@
         android:id="@+id/tip_retrieval_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/FTR_return"
+        app:layout_constraintBottom_toTopOf="@+id/TRF_total_tip_retrieval"
         app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp"
         tools:listitem="@layout/tip_retrieval_item" />
+
+    <TextView
+        android:id="@+id/TRF_total_tip_retrieval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="total remit"
+        android:textColor="@color/purple_500"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/FTR_return"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/FTR_return"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"
         android:text="Return"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

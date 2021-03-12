@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.headwaitapp.R;
 import com.example.headwaitapp.adapters.TipPoolAdapter;
@@ -23,6 +24,7 @@ public class TipPoolFragment extends Fragment {
     private NavController navController;
     private RecyclerView recyclerView;
     private TipPoolAdapter adapter;
+    private TextView totalTipPool;
 
     public TipPoolFragment() {
         // Required empty public constructor
@@ -44,6 +46,9 @@ public class TipPoolFragment extends Fragment {
 
         manuel = TipPoolFragmentArgs.fromBundle(getArguments()).getHeadWait();
         navController = Navigation.findNavController(view);
+
+        totalTipPool = view.findViewById(R.id.FTP_total_tippool);
+        totalTipPool.setText("Total Tip Pool: " + manuel.getTotalTipPool());
 
         recyclerView = view.findViewById(R.id.TP_RecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.headwaitapp.R;
 import com.example.headwaitapp.adapters.RemitAdapter;
@@ -23,6 +24,7 @@ public class RemitFragment extends Fragment {
     private NavController navController;
     private RecyclerView recyclerView;
     private RemitAdapter remitAdapter;
+    private TextView totalRemit;
 
     public RemitFragment() {
         // Required empty public constructor
@@ -40,6 +42,9 @@ public class RemitFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         manuel = RemitFragmentArgs.fromBundle(getArguments()).getHeadWait();
         navController = Navigation.findNavController(view);
+
+        totalRemit = view.findViewById(R.id.FR_total_remit);
+        totalRemit.setText("Total Remit: " + manuel.getTotalRemit());
 
         recyclerView = view.findViewById(R.id.remit_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));

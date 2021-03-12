@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.headwaitapp.R;
 import com.example.headwaitapp.adapters.TipRetrievalAdapter;
@@ -21,6 +22,7 @@ import com.example.headwaitapp.appclasses.Headwait;
 public class TipRetrievalFragment extends Fragment {
     private Headwait manuel;
     private NavController navController;
+    private TextView totalTipRetrieval;
     private RecyclerView recyclerView;
     private TipRetrievalAdapter adapter;
 
@@ -43,6 +45,10 @@ public class TipRetrievalFragment extends Fragment {
 
         manuel = TipRetrievalFragmentArgs.fromBundle(getArguments()).getHeadWait();
         navController = Navigation.findNavController(view);
+
+        totalTipRetrieval = view.findViewById(R.id.TRF_total_tip_retrieval);
+        totalTipRetrieval.setText("Total Tip Retrieval: " + manuel.getTotalTipRetrieval());
+
         recyclerView = view.findViewById(R.id.tip_retrieval_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         adapter = new TipRetrievalAdapter(manuel.getTipRetrievalServers());

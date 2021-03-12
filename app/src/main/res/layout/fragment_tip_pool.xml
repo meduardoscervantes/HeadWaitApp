@@ -5,13 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.TipPoolFragment">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/TP_RecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/FTP_return"
+        app:layout_constraintBottom_toTopOf="@+id/FTP_total_tippool"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/tip_pool_item" />
+
+    <TextView
+        android:id="@+id/FTP_total_tippool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="total remit"
+        android:textColor="@color/purple_500"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/FTP_return"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
     <Button
         android:id="@+id/FTP_return"
         android:layout_width="wrap_content"

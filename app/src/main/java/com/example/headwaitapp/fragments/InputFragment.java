@@ -34,6 +34,7 @@ public class InputFragment extends Fragment {
     private TextView totalCash;
     private TextView totalTipRetrieval;
     private TextView totalTipPool;
+    private TextView totalRemit;
     private Button addButt;
     private Button toHwInfo;
     private InputFragmentArgs args;
@@ -73,7 +74,14 @@ public class InputFragment extends Fragment {
         totalCash = view.findViewById(R.id.totalCash);
         totalTipRetrieval = view.findViewById(R.id.totalTipRetrieval);
         totalTipPool = view.findViewById(R.id.totalTipPool);
+        totalRemit = view.findViewById(R.id.totalRemit);
 
+        if(!(manuel.getServers().size() == 0)){
+            totalCash.setText("Cash you should have: " + manuel.getCash());
+            totalTipRetrieval.setText("Tip Retrieval Total should be: " + manuel.getTotalTipRetrieval());
+            totalTipPool.setText("Total tip pool: " + manuel.getTotalTipPool());
+            totalRemit.setText("Total Remit: " + manuel.getTotalRemit());
+        }
         addButt = view.findViewById(R.id.addButt);
         addButt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,6 +100,7 @@ public class InputFragment extends Fragment {
                                 totalCash.setText("Cash you should have: " + manuel.getCash());
                                 totalTipRetrieval.setText("Tip Retrieval Total should be: " + manuel.getTotalTipRetrieval());
                                 totalTipPool.setText("Total tip pool: " + manuel.getTotalTipPool());
+                                totalRemit.setText("Total Remit: " + manuel.getTotalRemit());
                                 serverNameET.setText("");
                                 remitET.setText("");
                                 tipPoolET.setText("");
@@ -107,6 +116,7 @@ public class InputFragment extends Fragment {
                                     totalCash.setText("Cash you should have: " + manuel.getCash());
                                     totalTipRetrieval.setText("Tip Retrieval Total should be: " + manuel.getTotalTipRetrieval());
                                     totalTipPool.setText("Total tip pool: " + manuel.getTotalTipPool());
+                                    totalRemit.setText("Total Remit: " + manuel.getTotalRemit());
                                     serverNameET.setText("");
                                     remitET.setText("");
                                     tipPoolET.setText("");
@@ -128,6 +138,7 @@ public class InputFragment extends Fragment {
                                 totalCash.setText("Cash you should have: " + manuel.getCash());
                                 totalTipRetrieval.setText("Tip Retrieval Total should be: " + manuel.getTotalTipRetrieval());
                                 totalTipPool.setText("Total tip pool: " + manuel.getTotalTipPool());
+                                totalRemit.setText("Total Remit: " + manuel.getTotalRemit());
                                 serverNameET.setText("");
                                 remitET.setText("");
                                 tipPoolET.setText("");
