@@ -7,18 +7,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.headwaitapp.R;
+import com.example.headwaitapp.adapters.ServersCashedOutAdapter;
 import com.example.headwaitapp.appclasses.Headwait;
 
 public class ServersCashedOutFragment extends Fragment {
     private Headwait manuel;
     private NavController navController;
-    private ServersCashedOutFragmentArgs args;
+    private ServersCashedOutAdapter adapter;
+    private RecyclerView recyclerView;
 
     public ServersCashedOutFragment() {
         // Required empty public constructor
@@ -37,9 +41,13 @@ public class ServersCashedOutFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        args = ServersCashedOutFragmentArgs.fromBundle(getArguments());
-        manuel = args.getHeadWait();
+        manuel = ServersCashedOutFragmentArgs.fromBundle(getArguments()).getHeadWait();
         navController = Navigation.findNavController(view);
+
+        recyclerView = view.findViewById(R.id.SCO_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        adapter = new ServersCashedOutAdapter(manuel.getServers());
+        recyclerView.setAdapter(adapter);
 
         view.findViewById(R.id.FSCO_back).setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,7 +18,6 @@
             android:layout_gravity="center"
             android:textSize="24dp"
             android:textColor="@color/black"
-            android:text="ServerName"
-            />
+            android:text="ServerName" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

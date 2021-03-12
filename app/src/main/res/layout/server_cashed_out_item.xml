@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        android:background="@color/purple_200"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/SCO_server_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="32dp"
+            android:textColor="@color/black"
+            android:text="ServerName" />
+        <TextView
+            android:id="@+id/SCO_tip_pool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            android:textColor="@color/black"
+            android:text="server tip pool" />
+        <TextView
+            android:id="@+id/SCO_server_remit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="32dp"
+            android:textColor="@color/orange"
+            android:text="server remit" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
