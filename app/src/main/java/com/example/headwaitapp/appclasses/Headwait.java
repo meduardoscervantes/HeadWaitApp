@@ -44,6 +44,10 @@ public class Headwait implements Parcelable {
         return Double.valueOf(df.format(total));
     }
 
+    public ArrayList<Server> getTipRetrievalServers() {
+        return tipRetrievalServers;
+    }
+
     public ArrayList<Server> getServers() {
         return servers;
     }
