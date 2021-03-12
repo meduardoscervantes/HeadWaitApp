@@ -1,31 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.TipPoolFragment"
-    android:orientation="vertical">
-
-    <ScrollView
+    tools:context=".fragments.TipPoolFragment">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/TP_RecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
-            android:id="@+id/FTP_linLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-    </ScrollView>
-    <TextView
-        android:id="@+id/FTP_totalTV"
-        android:layout_gravity="center|bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/FTP_return"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/tip_pool_item" />
     <Button
         android:id="@+id/FTP_return"
-        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Return"/>
+        android:layout_gravity="center_horizontal"
+        android:text="Return"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

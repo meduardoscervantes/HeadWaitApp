@@ -7,18 +7,22 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.headwaitapp.R;
+import com.example.headwaitapp.adapters.TipPoolAdapter;
 import com.example.headwaitapp.appclasses.Headwait;
 
 public class TipPoolFragment extends Fragment {
-    private TipPoolFragmentArgs args;
     private Headwait manuel;
     private NavController navController;
+    private RecyclerView recyclerView;
+    private TipPoolAdapter adapter;
 
     public TipPoolFragment() {
         // Required empty public constructor
@@ -37,9 +41,14 @@ public class TipPoolFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        args = TipPoolFragmentArgs.fromBundle(getArguments());
-        manuel = args.getHeadWait();
+
+        manuel = TipPoolFragmentArgs.fromBundle(getArguments()).getHeadWait();
         navController = Navigation.findNavController(view);
+
+        recyclerView = view.findViewById(R.id.TP_RecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        adapter = new TipPoolAdapter(manuel.getServers());
+        recyclerView.setAdapter(adapter);
 
         view.findViewById(R.id.FTP_return).setOnClickListener(new View.OnClickListener() {
             @Override
